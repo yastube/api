@@ -1,9 +1,13 @@
 
 export default async function handler(req, res) {
   const { uuid } = req.query;
-  if (!uuid) {
-    return res.status(400).json({ error: "UUID is required" });
+  res.setHeader("Access-Control-Allow-Origin", "*"); // or your domain
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
   }
+
   const imageUrl = `https://crafatar.com/capes/${uuid}`;
   const imageRes = await fetch(imageUrl);
   const buffer = await imageRes.arrayBuffer();
