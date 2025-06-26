@@ -1,5 +1,5 @@
 const knownUsers = {
-  "bb28c5cbccab473fa93023f81d58d63d": "Owner of teamenvex and this website.",
+  "bb28c5cbccab473fa93023f81d58d63d": "Minecraft Youtuber",
   "a-b-c-d-e": "Admin User",
   "x-y-z": "Cool member"
 };
